@@ -1,8 +1,22 @@
 body {
     display: flex;
+    flex-direction: column;
 }
 
-#grid {
+.header {
+    text-align: center;
+    font-size: 32px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.grid {
     display: flex;
     flex-wrap: wrap;
     height: 480px;
@@ -12,9 +26,6 @@ body {
 .square {
     border: 0.5px gray solid;
     box-sizing: border-box;
-    height: 30px;
-    width: 30px;
-    flex: auto;
 }
 
 .square:hover {
