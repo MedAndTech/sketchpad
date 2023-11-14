@@ -8,7 +8,7 @@ function createGrid(size) {
         for (let j = 0; j < size; j++) {
             const div = document.createElement("div");
             div.addEventListener("mouseover", () => {
-                getPenColor(div);
+                colorSquare(div);
             })
             div.style.width = GRID_SIZE / size + "px";
             div.style.height = GRID_SIZE / size + "px";
@@ -24,7 +24,7 @@ function resetGrid() {
     }
 }
 
-function getPenColor(elem) {
+function colorSquare(elem) {
     if (mouseDown) {
         elem.style.backgroundColor = color;
     }
