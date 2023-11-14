@@ -26,8 +26,21 @@ function resetGrid() {
 
 function colorSquare(elem) {
     if (mouseDown) {
-        elem.style.backgroundColor = color;
+        if (color === "random") {
+            elem.style.backgroundColor = "rgb(" + 
+                Math.floor(Math.random() * 255) + "," +
+                Math.floor(Math.random() * 255) + "," + 
+                Math.floor(Math.random() * 255) + ")";
+        } else {
+            elem.style.backgroundColor = color;
+        }
     }
+}
+
+function clearGrid() {
+    grid.childNodes.forEach(square => {
+        square.style.backgroundColor = "white";
+    })
 }
 
 
@@ -42,7 +55,18 @@ sizeButton.addEventListener("click", () => {
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
+
 let color = "black";
+document.querySelector("#colorBlack").addEventListener("click", () => {
+    color = "black"
+})
+document.querySelector("#colorRandom").addEventListener("click", () => {
+    color = "random";
+})
+
+document.querySelector("#clearButton").addEventListener("click", () => {
+    clearGrid();
+})
 
 
 
